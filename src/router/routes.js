@@ -8,6 +8,7 @@ const routes = [
       { path: 'administrator', component: () => import('pages/AdministratorPage.vue') },
       { path: 'nastavnik', component: () => import('pages/NastavnikPage.vue') },
       { path: 'postavke', component: () => import('pages/PostavkePage.vue') },
+      { path: 'kontakt', component: () => import('pages/KontaktPage.vue') },
     ],
   },
   // Always leave this as last one,
