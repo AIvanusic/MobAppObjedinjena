@@ -1,0 +1,65 @@
+@import 'variables.sass'
+
+:root {
+  --q-primary: #346C69 !important;
+}
+
+// Definiraj tirkiznu boju ako je nema u variables.sass
+$primary: #346C69 !default 
+
+.q-btn--primary {
+  background-color: $primary !important;
+  color: white !important;
+}
+
+// Aktivne stavke u meniju i ikonama
+.q-item--active {
+  color: $primary !important;
+}
+
+.q-item--active .q-item-label,
+.q-item--active .q-icon {
+  color: $primary !important;
+}
+
+// 🔹 BOJA Q-TOGGLE KOMPONENTE (ispravke)
+.q-toggle__inner {
+  background-color: transparent !important; /* Uklanja sivu traku */
+}
+
+.q-toggle__inner--truthy {
+  background-color: rgba($primary, 0.3) !important; /* Svjetlija tirkizna traka */
+}
+
+.q-toggle__thumb {
+  background-color: white !important; /* Thumb je bijeli kada je dark mode ugašen */
+}
+
+.q-toggle__thumb--truthy {
+  background-color: $primary !important; /* Thumb je tirkizni kada je dark mode upaljen */
+}
+
+// 🔹 BOJA TOOLBAR-a, HEADER-a i DRAWER-a (Boja app bara)
+.q-toolbar,
+.q-header,
+.q-drawer {
+  background-color: $primary !important;
+}
+
+// 🔹 BOJA IKONA
+.q-icon {
+  color: $primary !important;
+}
+
+// 🔹 GLOBALNI STILOVI ZA IKONE
+.school-icon,
+.work-icon,
+.person-icon,
+.settings-icon,
+.rss_feed-icon,
+.share-icon,
+.language-icon,
+.battery_full-icon,
+.network_wifi-icon {
+  color: $primary !important;
+}

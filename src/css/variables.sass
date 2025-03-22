@@ -1,0 +1,65 @@
+$primary: #346C69 !default  // Tirkizna boja
+$secondary: #26A69A
+$accent: #9C27B0
+
+$dark: #1D1D1D
+$positive: #21BA45
+$negative: #C10015
+$info: #31CCEC
+$warning: #F2C037
+
+// 🔹 STILIZACIJA Q-TOGGLE KOMPONENTE
+.q-toggle__inner {
+  background-color: transparent !important; /* Uklanja neželjenu pozadinu */
+}
+
+.q-toggle__inner--truthy {
+  background-color: rgba($primary, 0.3) !important; /* Lagano tirkizna traka */
+}
+
+.q-toggle__thumb {
+  background-color: white !important; /* Bijeli kružić kada je dark mode ugašen */
+  border-radius: 50% !important; /* Održava kružni oblik */
+  box-shadow: none !important; /* Uklanja kvadratni efekt */
+}
+
+.q-toggle__thumb--truthy {
+  background-color: $primary !important; /* Thumb postaje tirkizni kada je dark mode upaljen */
+  border-radius: 50% !important; /* Održava kružni oblik */
+  box-shadow: none !important;
+}
+
+// 🔹 AKTIVNE STAVKE U MENIJU (Tirkizna boja za odabrane opcije)
+.q-item--active {
+  color: $primary !important;
+}
+
+.q-item--active .q-item-label,
+.q-item--active .q-icon {
+  color: $primary !important;
+}
+
+// 🔹 STILIZACIJA APLIKACIJSKIH BAROVA
+.q-toolbar,
+.q-header,
+.q-drawer {
+  background-color: $primary !important;
+}
+
+// 🔹 STILIZACIJA IKONA
+.q-icon {
+  color: $primary !important;
+}
+
+// 🔹 GLOBALNI STILOVI ZA IKONE
+.school-icon,
+.work-icon,
+.person-icon,
+.settings-icon,
+.rss_feed-icon,
+.share-icon,
+.language-icon,
+.battery_full-icon,
+.network_wifi-icon {
+  color: $primary !default;
+}

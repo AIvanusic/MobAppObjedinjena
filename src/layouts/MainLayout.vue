@@ -25,9 +25,13 @@
       <q-list>
         <q-item-label header> mEvIDukacija </q-item-label>
 
-        <!-- <q-item-label header> Molimo, odaberite u kojoj ulozi pristupate. </q-item-label>-->
-
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
+        <EssentialLink
+          v-for="link in linksList"
+          :key="link.title"
+          v-bind="link"
+          @shareApp="shareApp"
+          active-class="text-turquoise"
+        />
       </q-list>
     </q-drawer>
 
@@ -67,19 +71,19 @@ const linksList = [
     title: 'Postavke',
     caption: 'Tu je sve po mom!',
     icon: 'settings',
-    route: '/postavke', // Ažurirani link na odgovarajuću stranicu unutar aplikacije
+    link: '/postavke', // Ažurirajte link na odgovarajuću stranicu unutar aplikacije
   },
   {
     title: 'Kontakt',
     caption: 'Kako do nas?',
     icon: 'rss_feed',
-    route: '/kontakt', // Ažurirajte link na odgovarajuću stranicu unutar aplikacije
+    link: '/kontakt', // Ažurirajte link na odgovarajuću stranicu unutar aplikacije
   },
   {
     title: 'Podijeli',
     caption: 'Podijelite ovu aplikaciju',
     icon: 'share',
-    onClick: shareApp, // POZIVAMO shareApp FUNKCIJU
+    action: 'shareApp', // Dodajte akciju za dijeljenje
   },
 ]
 
@@ -89,23 +93,6 @@ function toggleRightDrawer() {
   rightDrawerOpen.value = !rightDrawerOpen.value
 }
 
-//function shareApp() {
-//const shareUrl = 'https://www.veleri.hr'
-
-//if (navigator.share) {
-//navigator
-//.share({
-//title: 'Podijeli aplikaciju',
-//text: 'Pogledaj ovu aplikaciju!',
-//url: shareUrl,
-//})
-//.catch((error) => console.log('Greška pri dijeljenju:', error))
-//} else if (window.cordova && window.cordova.InAppBrowser) {
-//window.cordova.InAppBrowser.open(shareUrl, '_system')
-//} else {
-//window.open(shareUrl, '_blank')
-//}
-//}
 function shareApp() {
   const shareUrl = 'https://www.veleri.hr'
 
