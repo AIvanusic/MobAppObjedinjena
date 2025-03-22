@@ -6,10 +6,20 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
+    <plugin name="cordova-plugin-splashscreen" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-navigation href="about:*" />
     <allow-navigation href="*" />
     <access origin="*" />
     <allow-intent href="*" />
+    <platform name="android">
+        <preference name="SplashScreenDelay" value="2000" />
+        <preference name="FadeSplashScreen" value="true" />
+        <preference name="FadeSplashScreenDuration" value="1000" />
+        <preference name="ShowSplashScreenSpinner" value="false" />
+        <splash density="port-hdpi" src="res/screens/android/splash_screen.png" />
+        <splash density="port-xhdpi" src="res/screens/android/splash_screen.png" />
+        <splash density="port-xxhdpi" src="res/screens/android/splash_screen.png" />
+    </platform>
 </widget>
