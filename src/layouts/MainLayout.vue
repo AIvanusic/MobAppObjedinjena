@@ -45,45 +45,47 @@
 import { ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
 import { useQuasar } from 'quasar'
+import { useI18n } from 'vue-i18n'
 
 const $q = useQuasar()
+const { t } = useI18n()
 
 const linksList = [
   {
-    title: 'Voditelj/ica projekta / Administrator/ica',
-    caption: 'Sve pod kontrolom ;)',
+    title: t('administrator'),
+    caption: t('administratorCaption'),
     icon: 'school',
     route: '/administrator',
   },
   {
-    title: 'Nastavnica/Nastavnik',
-    caption: 'Kvalificirani i stručni, spremni dijeliti svoje znanje',
+    title: t('nastavnik'),
+    caption: t('nastavnikCaption'),
     icon: 'work',
     route: '/nastavnik',
   },
   {
-    title: 'Polaznica/Polaznik edukacije',
-    caption: 'Dođoh, vidjeh, naučih!',
+    title: t('polaznik'),
+    caption: t('polaznikCaption'),
     icon: 'person',
     route: '/polaznik',
   },
   {
-    title: 'Postavke',
-    caption: 'Tu je sve po mom!',
+    title: t('postavke'),
+    caption: t('postavkeCaption'),
     icon: 'settings',
-    link: '/postavke', // Ažurirajte link na odgovarajuću stranicu unutar aplikacije
+    link: '/postavke',
   },
   {
-    title: 'Kontakt',
-    caption: 'Kako do nas?',
+    title: t('kontakt'),
+    caption: t('contactCaption'),
     icon: 'rss_feed',
-    link: '/kontakt', // Ažurirajte link na odgovarajuću stranicu unutar aplikacije
+    link: '/kontakt',
   },
   {
-    title: 'Podijeli',
-    caption: 'Podijelite ovu aplikaciju',
+    title: t('podijeli'),
+    caption: t('podijeliCaption'),
     icon: 'share',
-    action: 'shareApp', // Dodajte akciju za dijeljenje
+    action: 'shareApp',
   },
 ]
 
@@ -135,5 +137,29 @@ function shareApp() {
 /* Dodajte dodatne stilove po potrebi */
 .text-turquoise {
   color: #346c69 !important;
+}
+
+.school-icon {
+  color: #346c69;
+}
+
+.work-icon {
+  color: #346c69;
+}
+
+.person-icon {
+  color: #346c69;
+}
+
+.settings-icon {
+  color: #346c69;
+}
+
+.rss_feed-icon {
+  color: #346c69;
+}
+
+.share-icon {
+  color: #346c69;
 }
 </style>

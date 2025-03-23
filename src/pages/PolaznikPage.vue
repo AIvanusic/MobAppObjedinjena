@@ -4,7 +4,7 @@
       <q-page class="q-pa-md flex column items-center">
         <div class="absolute-right flex flex-center" style="top: 90%; transform: translateY(-50%)">
           <q-btn
-            label="Povratak na glavnu stranicu"
+            :label="t('povratak')"
             size="15px"
             round
             color="teal"
@@ -16,8 +16,7 @@
         <!--u koraku 1 odabire se polaznik-->
         <div v-if="korak === 1">
           <h4>
-            Dobro došli. Kako biste zabilježili svoje prisustvo, molimo Vas, odaberite svoje ime i
-            prezime:
+            {{ t('polaznik1') }}
           </h4>
 
           <q-select
@@ -25,13 +24,12 @@
             :options="polaznici"
             option-value="idPolaznika"
             option-label="imeIPrezimePolaznika"
-            label="Molim, kliknite kako biste odabrali svoje ime i prezime"
+            :label="t('odabirImenaiPrezimena')"
             filled
             class="q-mb-md"
           />
           <p v-if="odabraniPolaznik">
-            Dobar Vam dan, {{ odabraniPolaznik.imeIPrezimePolaznika }}. Dalje, molim Vas, odaberite
-            kojoj ste edukaciji prisustvovali.
+            {{ t('helloPolaznik', { ime: odabraniPolaznik.imeIPrezimePolaznika }) }}
           </p>
 
           <q-btn v-if="odabraniPolaznik" @click="sljedeciKorak" color="purple" label="Nastavite!" />
@@ -96,10 +94,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-
+import { useI18n } from 'vue-i18n'
 import { api } from 'boot/axios'
 
 const korak = ref(1)
+const { t } = useI18n()
 
 const tekstPolaznik = ref('')
 const tekstEdukacija = ref('')

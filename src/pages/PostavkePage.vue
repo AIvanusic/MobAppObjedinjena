@@ -30,7 +30,7 @@
 
       <q-item clickable @click="showBatteryStatus">
         <q-item-section>
-          <q-item-label>Baterija</q-item-label>
+          <q-item-label>{{ $t('battery') }}</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-icon name="battery_full" class="battery_full-icon" />
@@ -39,7 +39,7 @@
 
       <q-item clickable @click="showNetworkStatus">
         <q-item-section>
-          <q-item-label>Mreža</q-item-label>
+          <q-item-label>{{ $t('network') }}</q-item-label>
         </q-item-section>
         <q-item-section avatar>
           <q-icon name="network_wifi" class="network_wifi-icon" />
