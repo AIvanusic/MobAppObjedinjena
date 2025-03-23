@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <q-header elevated>
+    <q-header elevated class="custom-header">
       <q-toolbar>
         <q-toolbar-title> Nastavnik izvođač edukacije </q-toolbar-title>
       </q-toolbar>

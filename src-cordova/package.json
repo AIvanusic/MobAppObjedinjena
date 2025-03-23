@@ -23,5 +23,9 @@
   "devDependencies": {
     "cordova-android": "^13.0.0",
     "cordova-plugin-splashscreen": "^6.0.1"
+  },
+  "dependencies": {
+    "cordova-plugin-battery-status": "^2.0.3",
+    "cordova-plugin-network-information": "^3.0.0"
   }
 }

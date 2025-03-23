@@ -1,14 +1,19 @@
-import { defineBoot } from '#q-app/wrappers'
 import { createI18n } from 'vue-i18n'
-import messages from 'src/i18n'
+import messagesHR from 'src/i18n/hr.js'
+import messagesEN from 'src/i18n/en.js'
 
-export default defineBoot(({ app }) => {
-  const i18n = createI18n({
-    locale: 'en-US',
-    globalInjection: true,
-    messages
-  })
-
-  // Set i18n instance on app
-  app.use(i18n)
+const i18n = createI18n({
+  legacy: false, // Dodano za Composition API
+  locale: localStorage.getItem('lang') || 'hr',
+  fallbackLocale: 'hr',
+  messages: {
+    hr: messagesHR,
+    en: messagesEN,
+  },
 })
+
+export default ({ app }) => {
+  app.use(i18n)
+}
+
+export { i18n }
